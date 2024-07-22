@@ -21,7 +21,7 @@ if num % 3 == 0 and num != 0:
 else:
   print('{}은 3의 배수가 아닙니다.'.format(num))
 
-# 정수 3개를 공백을 기준으로 입력받아 가장 큰 수를 출력하는 프로그램
+# 정수 3개를 공백을 기준으로 입력받아 가장 큰 수를 출력하기
 n1, n2, n3 = input('공백을 기준으로 정수 3개 입력>>').split()
 int(n1)
 int(n2)
@@ -33,7 +33,7 @@ elif n2>= n1 and n2 >= n3:
 else:
   print(n3)
 
-# 차량번호를 받아 차량번호가 짝수로 끝나면 운행가능. 아니면 운행불가 출력
+# 차량번호를 받아 차량번호가 짝수로 끝나면 운행가능. 아니면 운행불가 출력하기
 car_num = input('차량번호 입력 >>')
 if int(car_num[-1]) % 2 == 0:
   print('운행가능')
@@ -42,17 +42,56 @@ else:
 
 # Repetition statement while (반복문 while)
 
-# 정수를 입력받아서 받은 횟수 만큼 Hello 출력
+# 정수를 입력받아서 받은 횟수 만큼 Hello 출력하기
 num = int(input('정수를 입력하세요 : '))
-i = 1
-while i <= num:
-  print(f'{i}번째 Hello')
-  i += 1
-print(i)
+if num <=0:
+  print('잘못된 입력입니다.')
+else:
+  n=0
+  while n < num:
+    print(f'{n+1}번째 Hello')
+    n += 1
 
-# 1부터 100사이의 모든 정수 중에서 7의 배수만 출력하는 프로그램
+# 1부터 100사이의 모든 정수 중에서 7의 배수만 출력하기
 i = 1
 while i <= 100:
   if i % 7 == 0:
     print(i)
   i += 1
+
+# 커피 1잔을 300원에 판매하는 커피자판기에 돈을 넣어 뽑을 수 있는 커피 잔 수와 잔돈 출력하기
+money = int(input('커피자판기에 넣을 액수 >> '))
+cup = money // 300
+n = 1
+while cup >= n:
+  change = money - n * 300
+  print(f'커피 {n}잔, 잔돈 {change}원')
+  n += 1
+
+# 0부터 9사이의 정수를 입력받아 입력된 정수가 5개가 될 때까지 입력받아 출력하기
+# 중복된 값은 무시
+# 1
+a= []
+while len(a) < 5:
+  num = input('0~9 사이의 정수를 입력하세요 >> ')
+  a.append(num)
+  a = list(set(a))
+print(a)
+# 2
+numbers = set()
+ while len(numbers) < 5:
+   n = int(input('0 ~ 9 사이 정수를 입력하세요 >>> '))
+   numbers.add(n)
+ print('모두 입력되었습니다.')
+ print('입력된 값은 {}입니다.'.format(numbers))
+
+# 1-100 사이의 모든 정수를 한 줄에 10개씩 출력하기
+n = 1
+while n <= 100:
+  if n % 10 == 0:
+    print(n)
+  else:
+    print(n, end='\t')
+  n += 1
+
+
