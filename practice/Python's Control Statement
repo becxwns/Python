@@ -94,4 +94,73 @@ while n <= 100:
     print(n, end='\t')
   n += 1
 
+# 구구단 세로로 출력하기
+a = 2
+b = 1
+while b<=9:
+  a = 2
+  while a<=9:
+    print(f'{a} x {b} = {a*b}', end = '\t')
+    a += 1
+  print()
+  b += 1
+
+# # Repetition statement for (반복문 for)
+# 1~5 사이의 모든 정수를 역순으로 출력하기
+for i in range(5,0,-1):
+  print(i)
+
+# 사용자로부터 임의의 양의 정수를 하나 입력받은 후, 1부터 입력받은 정수까지 모든 정수의 합계 출력하기
+num = int(input('임의의 양수 입력 >> '))
+s = 0
+for i in range(num+1):
+  s += i
+print(f'입력: {num}, 합계: {s}')
+
+# 양의 정수를 하나 입력받아 그 숫자만큼 과일 이름을 입력받아 basket 리스트에 저장하기
+num = int(input('몇 개의 과일을 보관할까요? >> '))
+basket = []
+for i in range(num):
+  fruit = input(f'{i+1}번째 과일을 입력하세요 : ')
+  basket.append(fruit)
+print('입력받은 과일들은', basket, '입니다.')
+
+# 10명학생의 중간고사 성적을 5점씩 증가시킨 score 리스트를 생성하고 출력하기
+# 100점을 초과하면 안됌.
+# 1
+exam = [99,78,100,91,81,85,54,100,71,50]
+
+for i in range(len(exam)):
+  if exam[i] <= 95:
+    exam[i] += 5
+  else:
+    exam[i] += 100-exam[i]
+
+exam = [99, 78, 100, 91, 81, 85, 54, 100, 71, 50]
+score = [min(n + 5, 100) for n in exam]
+print(score)
+
+# 1부터 99사이의 모든 정수를 대상으로 369게임의 결과를 출력하기
+
+for i in range(1,100):
+  a = i // 10
+  b = i % 10
+  condition1 = a % 3 == 0 and a != 0
+  condition2 = b % 3 == 0 and b != 0
+  if condition1 and condition2:
+    print('짝짝', end = '\t')
+  elif condition1 or condition2:
+    print('짝', end = '\t')
+  else:
+    print(i, end = '\t')
+  if b == 0:
+    print()
+
+# 
+
+
+
+
+
+
 
