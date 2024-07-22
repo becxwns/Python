@@ -1,4 +1,4 @@
-# Variables and Data Types
+# 1. Variables and Data Types (변수와 데이터타입)
 
 # 5자리로 구성된 학번 '31025'를 학년, 반, 번호로 나누어 출력하기
 a = str(31025)
@@ -17,4 +17,140 @@ a = [10,20,30,40,50,60,70,80,90,100]
 print(a[2:8][1])
 
 # 요일별 할인 메뉴를 딕셔너리로 저장하고, 출력하기
-# 
+# 예시
+# 금요일 : 탕수육 , 토요일 : 유산슬 , 일요일 : 팔보채
+sale = {금요일 : 탕수육, 토요일 : 유산슬 , 일요일 : 팔보채}
+print('금요일:', sale['금요일'], '\n토요일:', sale['토요일'], '\n일요일:', sale['일요일'])
+
+# 2. Basic Input/Output (기본 입/출력)
+
+# 사용자로부터 2개의 실수를 입력받아 합계를 구하기
+num1 = float(input('첫 번째 실수 >> '))
+num2 = float(input('두 번째 실수 >> '))
+print(f'{num1:.2f}와 {num2:.2f}의 합은 {num1+num2:.2f}입니다.')
+
+# 사용자로부터 1에서 12사이의 월을 입력받아 해당 월이 며칠까지 있는 지 출력하기
+day = [31,30,31,30,31,30,31,31,30,31,30,31]
+month = int(input('1 - 12월 사이의 월을 입력 >> '))
+print(f'{month}월은 {day[month-1]}까지 있습니다.')
+
+# english_dict = {
+    'flower': '꽃',
+    'fly' : '날다',
+    'floor' : '바닥'
+}
+의 딕셔너리를 생성하고 영어 단어 입력시 단어의 뜻을 출력하는 영어 사전 만들기
+
+english_dict = {
+    'flower': '꽃',
+    'fly' : '날다',
+    'floor' : '바닥'
+}
+key = input('단어를 입력하시오 >> ')
+print(f'{key}: {english_dict[key]}')
+
+# 수학여행 희망지를 입력받아 동일한 입력을 무시한 모든 입력을 저장 및 출력하기 # 학생은 3명으로 가정
+a = input('희망하는 수학여행 희망지1: ')
+b = input('희망하는 수학여행 희망지2: ')
+c = input('희망하는 수학여행 희망지3: ')
+
+s = set([a,b,c])
+print(f'희망하는 여행지: {s}입니다.')
+
+# 3. Operator (연산자)
+
+# 임의의 두 정수를 입력받아서 십의 자리와 일의 자리로 분리하여 춣력하기
+num = int(input('10~99사이의 정수 입력 >>'))
+a = num // 10
+b = num % 10
+print(f'십의 자리: {a}\n일의 자리: {b}')
+
+# 임의의 초를 입력받아 해당 초를 시 분, 초로 변환하여 출력하기
+num = int(input('임의의 초를 입력하시오 >> '))
+hour = num // 3600
+minute = num % 3600 // 60
+second = num % 60
+print(f'{hour}시간 {minute}분 {second}초')
+
+# 네 자리 정수인 사원번호의 끝자리가 5이상이면 오전, 5이하면 오후를 출력하기
+num = int(input('사원번호 입력 >> '))
+last_num = num % 10
+if last_num >= 5:
+    print('근무 시간은 오전입니다.')
+else:
+  print('근무 시간은 오후입니다.')
+
+# 라면 한 박스에 20개가 들어갈 때 라면 개수에 따른 박스 개수 구하기
+num = int(input('라면 개수를 입력하세요 >> '))
+box = num // 20 + 1
+print(f'{num}개 라면을 담으려면 {box}박스가 필요합니다')
+
+# 국어, 영어, 수학 점수를 입력받아 평균 구하고, 평균이 80이상이면 합격, 아니면 불합격 하는 프로그램
+kor = int(input('국어점수 >> '))
+mat = int(input('수학점수 >> '))
+eng = int(input('영어점수 >> '))
+
+avg = (kor + mat + eng) / 3
+if avg >= 80:
+  print('합격')
+else:
+  print('불합격')
+
+# 4. Conditional Statement (조건문)
+
+# 점수를 입력받아서 학점 출력하기
+# 학점이 100~90 A 89~80 B 79~70 C 69~60 D 59~0 F
+score = int(input('점수를 입력하세요 >>> '))
+if score >= 90:
+  print(f'점수는 {score}이고, 학점은 A입니다.')
+elif score >= 80:
+  print(f'점수는 {score}이고, 학점은 B입니다.')
+elif score >= 70:
+  print(f'점수는 {score}이고, 학점은 C입니다.')
+elif score >= 60:
+  print(f'점수는 {score}이고, 학점은 D입니다.')
+else:
+  print(f'점수는 {score}이고, 학점은 F입니다.')
+
+# 임의의 정수를 입력받아 3의 배수인지 판별하기
+num = int(input('정수를 입력하세요 >> '))
+if num % 3 == 0 and num != 0:
+  print('{}은 3의 배수입니다.'.format(num))
+else:
+  print('{}은 3의 배수가 아닙니다.'.format(num))
+
+# 정수 3개를 공백을 기준으로 입력받아 가장 큰 수를 출력하는 프로그램
+n1, n2, n3 = input('공백을 기준으로 정수 3개 입력>>').split()
+int(n1)
+int(n2)
+int(n3)
+if n1 >= n2 and n1 >= n3:
+  print(n1)
+elif n2>= n1 and n2 >= n3:
+  print(n2)
+else:
+  print(n3)
+
+# 차량번호를 받아 차량번호가 짝수로 끝나면 운행가능. 아니면 운행불가 출력
+car_num = input('차량번호 입력 >>')
+if int(car_num[-1]) % 2 == 0:
+  print('운행가능')
+else:
+  print('운행불가')
+
+# 5. Repetition statement while (반복문 while)
+
+# 정수를 입력받아서 받은 횟수 만큼 Hello 출력
+num = int(input('정수를 입력하세요 : '))
+i = 1
+while i <= num:
+  print(f'{i}번째 Hello')
+  i += 1
+print(i)
+
+# 1부터 100사이의 모든 정수 중에서 7의 배수만 출력하는 프로그램
+i = 1
+while i <= 100:
+  if i % 7 == 0:
+    print(i)
+  i += 1
