@@ -1,4 +1,4 @@
-# 1. Variables and Data Types (변수와 데이터타입)
+# Variables and Data Types (변수와 데이터타입)
 
 # 5자리로 구성된 학번 '31025'를 학년, 반, 번호로 나누어 출력하기
 a = str(31025)
