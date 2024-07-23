@@ -1,1 +1,28 @@
+ # Built-In Function (내장함수)
 
+# 무지개의 일곱색깔을 저장하는 rainbow 리스트 생성 및 출력하기
+# 1
+rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple']
+for no, color in enumerate(rainbow):
+  print('무지개의 {}번째 색은 {}입니다.'.format(no + 1, color))
+
+# 2
+for i in range(len(rainbow)):
+  print(f'무지개의 {i+1}번째 색은 {rainbow[i]}입니다.')
+
+# 어떤 학생의 점수를 입력받아 평균 점수, 최고 점수, 최저 점수를 구하기
+# 몇 개의 점수를 입력 받을지 모르는 상황
+# 0보다 작은 점수를 입력하면 더 이상 입력할 점수가 없음을 의미
+# 입력받은 모든 점수는 exam 리스트에 저장
+# 마지막에 입력된 0보다 작은 점수는 exam에 저장하지 않습니다.
+exam = []
+print('점수를 입력하세요. 더 이상 입력할 점수가 없으면 음수를 아무거나 입력하세요')
+while True:
+  score = int(input('점수 입력'))
+  if score < 0:
+    break
+  else: 
+    exam.append(score)
+    avg = sum(exam) / len(exam)
+   
+print(f'평균 = {avg:.1f}, 최대 = {max(exam)}, 최소 = {min(exam)}')
