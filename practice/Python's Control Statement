@@ -198,6 +198,9 @@ while True:
     break
   count += 1
 
+# 조건 만족하는 구구단 출력
+# 조건1 : 짝수단 출력 x blank line추가
+# 조건2 : 각 단까지만 출력(3단은 3x3까지, 5단은 5x5까지 출력)
 for dan in range(2, 10):
     if dan % 2 == 0:
       print()
