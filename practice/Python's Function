@@ -26,3 +26,22 @@ while True:
     avg = sum(exam) / len(exam)
    
 print(f'평균 = {avg:.1f}, 최대 = {max(exam)}, 최소 = {min(exam)}')
+
+# method(메소드)
+# 지역번호 - 국번 - 가입자개별번호 형식으로 되어있는 전화번호
+# 02-543-2109
+# 031-4567-8900
+# 위와 같은 예가 있을 때, 어떤 형식의 전화번호를 입력하더라도 국번을 추출하여 출력하기
+# 1 index 활용하기
+num = input('전화번호를 입력하세요 >> ')
+start = num.index('-') + 1
+end = num.index('-',start) # start 이후의 - index 번호
+code = num[start:end]
+print(code)
+
+# 2 split() 활용하기
+num = input('전화번호를 입력하세요 >> ')
+code = num.split('-')[1]
+print(code)
+
+# 
