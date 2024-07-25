@@ -44,4 +44,66 @@ num = input('전화번호를 입력하세요 >> ')
 code = num.split('-')[1]
 print(code)
 
-# 
+# 사업자 번호를 입력해 형식이 맞는지 점검하기
+no = input('사업자등록번호를 입력하세요(예: 123-45-67890) >>> ')
+condition1 = (no.find('-') == 3)
+condition2 = (no.find('-', 4) == 6)
+condition3 = (len(no) == 12)
+condition4 = (no.replace('-', '').isdecimal())
+if condition1 and condition2 and condition3 and condition4:
+ print('올바른 형식입니다.')
+else:
+ print('올바른 형식이 아닙니다.')
+
+# "김철수",85 의 형식을 관뢰되는 성적 프로그램의 데이터를 각각 name과 score 변수에 저장하기
+data = input("이름과 성적을 입력하세요 >> ")
+name, score = data.split(',')
+name = name.strip('"')
+    
+print(name, score)
+
+# User-Defined Fuction
+# 사용자 정의함수
+
+# 700원짜리 음료수를 뽑을 수 있는 자판기 프로그램 구현하기
+# 돈을 넣으면 몇 잔의 음료수를 뽑을 수 있는지 그리고 잔돈은 얼마인지 모든 경우 출력하기
+
+# 함수 정의
+# 반환값 없음
+# 함수 이름: vending_machine()
+# 매개변수 : 정수 money
+
+# 코드 구성
+
+def vending_machine(money):
+  for i in range(money // 700 + 1):
+    print(f'음료수 = {i}개, 잔돈 = {money}원')
+    money -= 700
+
+vending_machine(3000)
+
+# 키(Key)가 '과목명'이고, 값(value)이 '점수'인 marks 딕셔너리를 전달하면
+# 해당 딕셔너리의 점수들의 평균을 반환하는 get_average() 함수를 구현하기
+
+def get_average(marks):
+  return sum(marks.values()) // len(marks)  
+
+marks = {'국어': 90, '영어': 80, '수학': 85}
+average = get_average(marks)
+print('평균은 {}입니다.'.format(average))
+
+# 축의금을 내는 사람의 이름과 그 사람이 낸 축의금을 딕셔너리에 저장하고
+# 전체 축의금의 합계를 구할 수 있는 gift() 함수 구현하기
+
+total = 0
+def gift(dic, who, money):
+  global total
+  total += money
+  dic[who] = money
+
+wedding = {}
+gift(wedding, '영희', 5)
+gift(wedding, '철수', 3)
+gift(wedding, '이모', 10)
+print('축의금 명단: {}'.format(wedding))
+print('전체 축의금: {}'.format(total))
