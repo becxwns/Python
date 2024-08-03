@@ -1,0 +1,51 @@
+# 자동으로 실행되는 로또 추첨 프로그램을 다음 지시사항에 따라 구현하기
+1. 1~45 사이의 모든 정수를 순서대로 pot 리스트에 저장
+2. 다음 과정 6번 반복
+- pot 리스트 무작위로 섞기
+- pot 리스트의 마지막 숫자 하나만 빼서 jackpot 리스트에 저장하기
+- 2초 동안 멈추기
+3. jackpot 리스트의 모든 요소를 오름차순 정렬
+4. jackpot 리스트의 모든 요소를 출력
+
+import random
+import time
+
+pot = list(range(1,46))
+jackpot = []
+
+for i in range(1,7):
+  random.shuffle(pot)
+  pick = pot.pop()
+  print(f'{i}번째 당첨번호는 {pick}입니다.')
+  jackpot.append(pick)
+  time.sleep(2)
+
+jackpot.sort()
+print(jackpot)
+
+# 지시사항에 따라 UpDown 게임을 구현하세요.
+1. 1~100 사이의 정수 중 하나를 임의로 생성하면 사용자는 그 숫자를 맞힐 때까지 값을 예상하여 입력
+2. 사용자가 입력한 값이 정답보다 작으면 Up, 정답보다 크면 Down을 출력
+3. 정답을 맞히면 몇 초만에 맞혔는지 출력, 소수 아래값은 내림 처리
+
+import random
+import time
+import math
+
+num = random.randint(1,100)
+
+print("UpDown게임을 시작합니다.")
+
+start = time.time()
+while True:
+  guess_num = int(input("어떤 값일까요? >> "))
+  if guess_num == num:
+    print("정답입니다.")
+    break
+  elif guess_num > num: 
+    print("Down")
+  else:
+    print("Up")
+end = time.time()
+elapse = end - start
+print(f'{math.floor(elapse)}초 만에 성공했습니다.')
